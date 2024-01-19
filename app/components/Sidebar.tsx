@@ -52,6 +52,7 @@ export const Sidebar = () => {
               height={50}
               src="https://images.unsplash.com/photo-1599272771314-f3ec16bda3f2"
               alt="Avatar"
+              priority
             />
           </span>
           <span className="text-sm md:text-base font-bold">Fausto Zaruma</span>

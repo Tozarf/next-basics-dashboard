@@ -1,5 +1,4 @@
 import { PokeResponse, PokemonGrid, SimplePokemon } from "@/app/pokemons";
-import Image from "next/image";
 
 const getPokemons = async (
   limit = 20,
