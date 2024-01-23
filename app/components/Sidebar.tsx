@@ -2,7 +2,12 @@ import Image from "next/image";
 import React from "react";
 import { GiIonicColumn } from "react-icons/gi";
 import { SidebarMenuItem } from "./SidebarMenuItem";
-import { IoBriefcase, IoBrowsersOutline, IoCalculator } from "react-icons/io5";
+import {
+  IoBriefcase,
+  IoBrowsersOutline,
+  IoCalculator,
+  IoHeartCircleOutline,
+} from "react-icons/io5";
 
 const menuItems = [
   {
@@ -22,6 +27,12 @@ const menuItems = [
     icon: <IoBriefcase size={40} />,
     title: "Pokemons",
     subtitle: "Static Generation",
+  },
+  {
+    path: "/dashboard/favorites",
+    icon: <IoHeartCircleOutline size={40} />,
+    title: "Favorite",
+    subtitle: "Global state",
   },
 ];
 
