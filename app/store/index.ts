@@ -1,5 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import counterReducer from "./counter/counterSlice";
+import {
+  addOne,
+  reduceOne,
+  resetCount,
+  initCounterState,
+} from "./counter/counterSlice";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 export const store = configureStore({
   reducer: {
@@ -14,3 +20,4 @@ export type AppDispatch = typeof store.dispatch;
 
 export const useAppDispatch: () => AppDispatch = useDispatch;
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
+export { addOne, reduceOne, resetCount, initCounterState };

@@ -1,12 +1,7 @@
 "use client";
 import { useAppDispatch, useAppSelector } from "@/app/store";
-import {
-  addOne,
-  initCounterState,
-  reduceOne,
-  resetCount,
-} from "@/app/store/counter/counterSlice";
-import React, { useEffect, useState } from "react";
+import { addOne, initCounterState, reduceOne, resetCount } from "@/app/store";
+import React, { useEffect } from "react";
 
 interface Props {
   value: number;
