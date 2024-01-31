@@ -1,13 +1,13 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { SimplePokemon } from "@/app/pokemons";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface PokemonState {
   [key: string]: SimplePokemon;
 }
 const initialState: PokemonState = {
-  "1": { id: "1", name: "bulbasaur" },
-  "3": { id: "3", name: "venusaur" },
-  "5": { id: "5", name: "charmeleon" },
+  // "1": { id: "1", name: "bulbasaur" },
+  // "3": { id: "3", name: "venusaur" },
+  // "5": { id: "5", name: "charmeleon" },
 };
 
 const pokemonsSlice = createSlice({
