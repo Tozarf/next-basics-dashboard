@@ -4,12 +4,12 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 interface PokemonState {
   [key: string]: SimplePokemon;
 }
-const initialState: PokemonState = {
-  // "1": { id: "1", name: "bulbasaur" },
-  // "3": { id: "3", name: "venusaur" },
-  // "5": { id: "5", name: "charmeleon" },
+const getInitialState = (): PokemonState => {
+  //*Initially, not having data in localStorage would trigger an error,if that is the case, JSON.parse will parse an empty object.
+  const favorites = JSON.parse(localStorage.getItem("fav-pokemons") ?? "{}");
+  return favorites;
 };
-
+const initialState: PokemonState = getInitialState();
 const pokemonsSlice = createSlice({
   name: "pokemons",
   initialState,
@@ -20,9 +20,14 @@ const pokemonsSlice = createSlice({
 
       if (!!state[id]) {
         delete state[id];
-        return;
+        // return;
+      } else {
+        state[id] = pokemon;
       }
-      state[id] = pokemon;
+
+      //! BAD PRACTICE: using redux and local storage to simultaneously hold a state.
+      localStorage.setItem("fav-pokemons", JSON.stringify(state));
+      return;
     },
   },
 });
